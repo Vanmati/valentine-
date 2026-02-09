@@ -28,12 +28,20 @@ h2 {
   color: #e91e63;
 }
 
+.tamil {
+  color: #e91e63;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Photo hidden initially */
 .photo {
+  display: none;
   width: 100%;
   max-width: 250px;
   border-radius: 15px;
   margin: 15px auto;
-  display: block;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
@@ -71,18 +79,17 @@ button {
 <body>
   <div class="box">
     <h2>Will you be my Valentine? 💖</h2>
-    <p="color:#e91e63; font-size:16px;
-      font-weight:bold;">
-      NO ku chance illa <br>
-      Nee dhan en Valentine
+
+    <p class="tamil">
+      NO ku chance illa 😜 <br>
+      Nee dhan en Valentine ❤️
     </p>
 
-    <!-- Your photo -->
-    
+    <!-- Hidden photo -->
+    <img src="us.jpg" class="photo" id="photo">
 
     <div class="btns">
       <button id="yes" onclick="yesClick()">YES ❤️</button>
-        <img src="us.jpeg" class="photo">
       <button id="no" onmouseover="moveNo()">NO 🙈</button>
     </div>
   </div>
@@ -100,9 +107,12 @@ function moveNo() {
 }
 
 function yesClick() {
+  // show photo
+  document.getElementById("photo").style.display = "block";
+
+  // optional sweet message
   alert("Yesss! 💕 I knew it 😍 Happy Valentine’s Day!");
 }
 </script>
 </body>
-
 </html>
