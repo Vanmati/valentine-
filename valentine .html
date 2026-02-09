@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Be My Valentine</title>
+
+<style>
+  body {
+    background: #ffe6f0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 350px;
+    text-align: center;
+  }
+
+  h2 {
+    color: #e91e63;
+  }
+
+  .photo {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  margin: 15px auto;
+  display: block;
+  filter: blur(12px);
+  transition: filter 0.8s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+  .tamil {
+    color: #d81b60;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none;
+  }
+
+  .btns {
+    margin-top: 30px;
+    position: relative;
+    height: 120px;
+  }
+
+  button {
+    padding: 12px 28px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  #yes {
+    background: #e91e63;
+    color: white;
+    left: 40px;
+    top: 40px;
+  }
+
+  #no {
+    background: #ccc;
+    color: #333;
+    left: 180px;
+    top: 40px;
+  }
+</style>
+</head>
+
+<body>
+  <div class="box">
+    <h2>Will you be my Valentine? 💖</h2>
+
+    <!-- Hidden photo -->
+   <img id="ourPhoto" src="us.jpg" class="photo">
+
+    <!-- Tamil message -->
+    <div id="tamilText" class="tamil">
+      NO ku chance illa 😜<br>
+      Nee dhan en Valentine ❤️
+    </div>
+
+    <div class="btns">
+      <button id="yes" onclick="yesClick()">YES ❤️</button>
+      <button id="no" onmouseover="moveNo()">NO 🙈</button>
+    </div>
+  </div>
+
+<script>
+  function moveNo() {
+    const noBtn = document.getElementById("no");
+    const container = document.querySelector(".btns");
+
+    const x = Math.random() * (container.clientWidth - noBtn.offsetWidth);
+    const y = Math.random() * (container.clientHeight - noBtn.offsetHeight);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  }
+
+  function yesClick() {
+  document.getElementById("ourPhoto").style.filter = "blur(0)";
+  document.getElementById("tamilText").style.display = "block";
+  alert("Yesss! 💕 I knew it 😍");
+}
+</script>
+
+</body>
+</html>
